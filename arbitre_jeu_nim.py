@@ -122,6 +122,7 @@ def get_who_starts_input(player1, player2):
 
 
 def main_jeu_de_nim():
+    """Fonction qui lance le jeu de Nim"""
     print("******************** Jeu de Nim ***********************")
 
     list_matches = init_list_matches()
