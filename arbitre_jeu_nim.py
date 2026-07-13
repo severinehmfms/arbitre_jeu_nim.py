@@ -121,7 +121,7 @@ def get_who_starts_input(player1, player2):
     return int(starts_input)
 
 
-if __name__ == '__main__':
+def main_jeu_de_nim():
     print("******************** Jeu de Nim ***********************")
 
     list_matches = init_list_matches()
@@ -134,12 +134,12 @@ if __name__ == '__main__':
     list_matches_played = []
 
     while get_nb_availables_matches(list_matches) > 0:
-        print(f"Au tour de {players[int(who_plays)-1]} de jouer.")
+        print(f"Au tour de {players[int(who_plays) - 1]} de jouer.")
         matches_plays = get_matches_input(list_matches)
         list_matches_played = matches_plays.split()
         # On récupère les allumettes jouées par le joueur et on les traite
         for match in list_matches_played:
-            print(f"Le joueur {players[int(who_plays)-1]} a choisi l'allumette numéro {match}")
+            print(f"Le joueur {players[int(who_plays) - 1]} a choisi l'allumette numéro {match}")
             take_match(list_matches, who_plays, match)
         if get_nb_availables_matches(list_matches) > 0:
             # On change de joueur
@@ -147,4 +147,8 @@ if __name__ == '__main__':
         # On affiche les allumettes
         print_matches(list_matches)
 
-    print(f"{players[int(who_plays)-1]} a enlevé la dernière allumette et a perdu !")
+    print(f"{players[int(who_plays) - 1]} a enlevé la dernière allumette et a perdu !")
+
+
+if __name__ == '__main__':
+    main_jeu_de_nim()
